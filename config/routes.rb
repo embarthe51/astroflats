@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :astroflats, only: %i[index new create]
+  resources :astroflats, only: %i[index new create] do
+    resources :bookings, only: %i[index show new create]
+  end
 
   devise_for :users
   root to: "pages#home"
