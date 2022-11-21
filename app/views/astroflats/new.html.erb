@@ -1,0 +1,9 @@
+<h2>Add a new astroflat!</h2>
+<%= simple_form_for(@flat) do |form| %>
+  <%= form.input :flat_name %>
+  <%= form.input :address %>
+  <%= form.input :number_of_guests %>
+  <%= form.input :price_per_night %>
+  <%= form.input :surface_area %>
+  <%= form.submit %>
+<% end %>
