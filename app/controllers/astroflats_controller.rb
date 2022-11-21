@@ -1,4 +1,5 @@
 class AstroflatsController < ApplicationController
+  belongs_to :user
   def index
     @flats = Astroflat.all
   end
@@ -8,12 +9,12 @@ class AstroflatsController < ApplicationController
   end
 
   # A faire
-  # - avant de créer l'astroflat, ajouter l'user_id (avec current_user)
-  # - terminer la fonctionalité de create
-  # - redirect_to la page de l'astroflat
+  # - redirect_to la page de l'astroflat (l show)
   def create
     @flat = Astroflat.new(astroflat_params)
-    # raise
+    @flat.user = current_user
+    @flat.save
+    redirect_to root_path
   end
 
   private
