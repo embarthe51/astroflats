@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :astroflats, only: %i[index new create]
 
   devise_for :users
   root to: "pages#home"
@@ -7,4 +6,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :astroflats, only: %i[index new create] do
+    resources :bookings, only: %i[index show new create]
+  end
 end
