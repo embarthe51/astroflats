@@ -1,0 +1,9 @@
+<h2> <%= @astroflat.flat_name %></h2>
+
+<% if policy(@astroflat).edit? %>
+  <%= link_to "Edit this astroflat", edit_astroflat_path(@astroflat) %> |
+<% end %>
+<!-- [...] -->
+<%= link_to "Delete",
+astroflat_path(@astroflat),
+data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@astroflat).destroy? %>
