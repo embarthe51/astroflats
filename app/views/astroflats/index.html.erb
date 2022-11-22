@@ -1,4 +1,11 @@
-<h1>Astroflats#index</h1>
-<% @astroflats.each do |item| %>
-  <h2><%= item.flat_name %></h2>
-<% end %>
+<section>
+  <div class="welcome-banner shadowed">
+    <h1>Welcome to Astroflats!</h1>
+    <h3><%= current_user.first_name if user_signed_in? %></h3>
+    <p>Let's book flats on another planet</p>
+  </div>
+  <h2>Astroflats</h2>
+  <% @astroflats.each do |item| %>
+    <h2><%= item.flat_name %></h2>
+  <% end %>
+</section>
