@@ -9,7 +9,7 @@ class AstroflatsController < ApplicationController
   end
 
   # A faire
-  # - redirect_to la page de l'astroflat (l show)
+  # - redirect_to la page de l'astroflat (la show)
   def create
     @flat = Astroflat.new(astroflat_params)
     @flat.user = current_user
