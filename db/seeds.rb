@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# t.string "address"
+# t.integer "surface_area"
+# t.integer "price_per_night"
+# t.string "flat_name"
+# t.integer "number_of_guests"
+
+Astroflat.create()
