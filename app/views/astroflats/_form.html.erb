@@ -1,0 +1,10 @@
+
+        <%= simple_form_for(astroflat) do |form| %>
+          <%= form.input :flat_name %>
+          <%= form.input :address %>
+          <%= form.input :content %>
+          <%= form.input :number_of_guests %>
+          <%= form.input :price_per_night %>
+          <%= form.input :surface_area %>
+          <%= form.submit class: 'btn btn-flat'%>
+        <% end %>

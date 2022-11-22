@@ -20,8 +20,11 @@ class AstroflatsController < ApplicationController
     @astroflat = Astroflat.new(astroflat_params)
     @astroflat.user = current_user
     authorize @astroflat
-    @astroflat.save
-    redirect_to astroflats_path
+    if @astroflat.save
+      redirect_to astroflats_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit

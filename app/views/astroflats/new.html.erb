@@ -1,9 +1,10 @@
-<h2>Add a new astroflat!</h2>
-<%= simple_form_for(@astroflat) do |form| %>
-  <%= form.input :flat_name %>
-  <%= form.input :address %>
-  <%= form.input :number_of_guests %>
-  <%= form.input :price_per_night %>
-  <%= form.input :surface_area %>
-  <%= form.submit %>
-<% end %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <h3 class="text-center mb-4"> Add my astroflat</h3>
+        <%= render "form", astroflat: @astroflat %>
+      </div>
+    </div>
+  </div>
+</div>
