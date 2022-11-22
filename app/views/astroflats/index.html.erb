@@ -5,7 +5,19 @@
     <p>Let's book flats on another planet</p>
   </div>
   <h2>Astroflats</h2>
-  <% @astroflats.each do |item| %>
-    <h2><%= item.flat_name %></h2>
-  <% end %>
+  <div class="container">
+    <% @astroflats.each do |item| %>
+      <div class="card-trip">
+        <img src="https://static.nationalgeographic.fr/files/styles/image_3200/public/01-solar-system-pia12114_orig.jpg?w=1900&h=1431" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= item.flat_name %></h2>
+              <p><%= item.content %></p>
+            </div>
+            <h3 class="card-trip-pricing"><%= item.price_per_night %>€</h3>
+            <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+          </div>
+      </div>
+    <% end %>
+  </div>
 </section>
