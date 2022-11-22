@@ -1,5 +1,4 @@
 class AstroflatsController < ApplicationController
-  belongs_to :user
   def index
     @flats = Astroflat.all
   end
