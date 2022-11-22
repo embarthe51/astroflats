@@ -50,6 +50,6 @@ class AstroflatsController < ApplicationController
   end
 
   def astroflat_params
-    params.require(:astroflat).permit(:flat_name, :address, :number_of_guests, :price_per_night, :surface_area)
+    params.require(:astroflat).permit(:flat_name, :address, :content, :photo, :number_of_guests, :price_per_night, :surface_area)
   end
 end

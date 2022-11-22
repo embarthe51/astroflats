@@ -5,3 +5,40 @@
   background: #F49D1A;
   transition: background 0.3s ease;
 }
+
+.btn-flat-violet {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #B01E68;
+  transition: background 0.3s ease;
+}
+
+// .btn-small {
+//   color: white;
+//   padding: 8px 8px;
+//   border-radius: 4px;
+//   background: #B01E68;
+//   opacity: 0.3;
+//   transition: background 0.3s ease;
+//   text-decoration: none
+// }
+
+.btn-ghost {
+  color: #B01E68;
+  border: 1px solid #B01E68;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-weight: lighter;
+  opacity: 0.6;
+  background: white;
+  transition: opacity 0.3s ease;
+  a{
+    text-decoration: none;
+    color: #B01E68;
+  }
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+}
