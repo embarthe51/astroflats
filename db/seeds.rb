@@ -12,8 +12,9 @@
 # t.string "flat_name"
 # t.integer "number_of_guests"
 # t.text "content"
-Astroflat.destroy_all
+puts "couco"
 User.destroy_all
+Astroflat.destroy_all
 User.create(email: "blablabla@gmail.com", password: "123456")
 Astroflat.create(flat_name: "Appartment under the ice", content: "Great appatment on Mars under ice, don't be afraid, it isn't cold as you can think !", address: "Utopia planitia, Mars planet", surface_area: 500, price_per_night: 25000, number_of_guests: 10, user: User.all.sample)
 Astroflat.create(flat_name: "Jupiter floating villa", content: "Have a unique experience in our floating villa in jupiter, sensations guaranteed", address: "South Equatorial belt, Jupiter planet", surface_area: 1000, price_per_night: 50000, number_of_guests: 15, user: User.all.sample)
