@@ -12,9 +12,9 @@
 # t.string "flat_name"
 # t.integer "number_of_guests"
 # t.text "content"
-puts "couco"
-User.destroy_all
+puts "coucou"
 Astroflat.destroy_all
+User.destroy_all
 User.create(email: "blablabla@gmail.com", password: "123456")
 Astroflat.create(
     flat_name: "Appartment under the ice",
