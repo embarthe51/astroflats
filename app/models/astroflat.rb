@@ -9,6 +9,6 @@ class Astroflat < ApplicationRecord
   validates :number_of_guests, presence: true, numericality: { only_integer: true }
   validates :price_per_night, presence: true, numericality: { only_integer: true }
 
-  validates :photo, attached: true, content_type: ['image/jpeg', 'image/jpg', 'image/png'],
+  validates :photo, content_type: ['image/jpeg', 'image/jpg', 'image/png'],
                                     size: { between: 1.kilobyte..1.megabytes, message: 'Must less than 1 MB' }
 end

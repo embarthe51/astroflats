@@ -15,7 +15,7 @@
 Astroflat.destroy_all
 User.destroy_all
 User.create(email: "blablabla@gmail.com", password: "123456")
-Astroflat.create(flat_name: "Appartment under the ice", content: "Great appatment on Mars under ice, don't be afraid, it isn't cold as you can think !", address: "Utopia planitia, Mars planet", surface_area: 500, price_per_night: 25000, number_of_guests: 10, user: User.all.sample)
+p Astroflat.create(flat_name: "Appartment under the ice", content: "Great appatment on Mars under ice, don't be afraid, it isn't cold as you can think !", address: "Utopia planitia, Mars planet", surface_area: 500, price_per_night: 25000, number_of_guests: 10, user: User.all.sample)
 Astroflat.create(flat_name: "Jupiter floating villa", content: "Have a unique experience in our floating villa in jupiter, sensations guaranteed", address: "South Equatorial belt, Jupiter planet", surface_area: 1000, price_per_night: 50000, number_of_guests: 15, user: User.all.sample)
 Astroflat.create(flat_name: "Neptunian rocket", content: "In a rocket create for the neptunian conditions, you can live a crazy experience on the far away planet", address: " Center of Neptune planet", surface_area: 40, price_per_night: 100000, number_of_guests: 5, user: User.all.sample)
 Astroflat.create(flat_name: "Trip with view in ISS", content: "If you dream of seeing the earth from above, a trip to the ISS is perfect for you", address: "ISS", surface_area: 388, price_per_night: 100000, number_of_guests: 10, user: User.all.sample)
