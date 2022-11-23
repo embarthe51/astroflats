@@ -1,28 +1,25 @@
 <section>
-  <div class="welcome-banner shadowed">
-    <h1>Welcome to Astroflats!</h1>
-    <h3><%= current_user.first_name if user_signed_in? %></h3>
-    <p>Let's book flats on another planet</p>
-  </div>
   <h2>Astroflats</h2>
   <div class="container">
     <div class="cards">
       <% @astroflats.each do |item| %>
-        <div class="card-trip">
-          <% if item.photo.attached? %>
-            <%= cl_image_tag(item.photo.key) %>
-          <% else %>
-            <%= image_tag("https://static.nationalgeographic.fr/files/styles/image_3200/public/01-solar-system-pia12114_orig.jpg?w=1900&h=1431") %>
-          <% end %>
-            <div class="card-trip-infos">
-              <div>
-                <h2><%= item.flat_name %></h2>
-                <p><%= item.content %></p>
+        <%= link_to astroflat_path(item) do %>
+          <div class="card-trip">
+            <% if item.photo.attached? %>
+              <%= cl_image_tag(item.photo.key) %>
+            <% else %>
+              <%= image_tag "planet.jpg" %>
+            <% end %>
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= item.flat_name %></h2>
+                  <p><%= item.content %></p>
+                </div>
+                <h3 class="card-trip-pricing"><%= item.price_per_night %>€</h3>
+                <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
               </div>
-              <h3 class="card-trip-pricing"><%= item.price_per_night %>€</h3>
-              <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
-            </div>
-        </div>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
