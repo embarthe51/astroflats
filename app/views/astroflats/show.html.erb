@@ -1,6 +1,7 @@
 <div class="container">
     <article class="box-astroflat">
       <%= cl_image_tag(@astroflat.photo.key) if @astroflat.photo.attached? %>
+      <%= image_tag "planet.jpg" unless @astroflat.photo.attached? %>
       <div class="flat-details">
         <h2><%=@astroflat.flat_name %></h2>
         <p> <strong>Address:</strong> <%= @astroflat.address%> </p>
