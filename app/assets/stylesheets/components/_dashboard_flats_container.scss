@@ -1,0 +1,18 @@
+.dashboard-flats-container {
+  max-width: 540px;
+  background-color: white;
+  padding: 32px;
+  margin: 32px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 4px;
+
+  article {
+    margin: 16px;
+  }
+
+  img {
+    width: 200px;
+  }
+}

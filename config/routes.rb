@@ -9,5 +9,8 @@ Rails.application.routes.draw do
   resources :astroflats do
     resources :bookings, only: %i[new create]
   end
+  # dashboard route
+  get 'dashboard', to: 'astroflats#dashboard'
+
   resources :bookings, only: [:show, :destroy]
 end
