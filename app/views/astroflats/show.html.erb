@@ -1,11 +1,47 @@
-<h2> <%= @astroflat.flat_name %></h2>
+<div class="container">
+  <div class="row justify-content-center">
+    <div id="box-astroflat"class="border col-lg-6 mt-5">
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <h2><%=@astroflat.flat_name %></h2>
+          <p> <strong>Address:</strong> <%= @astroflat.address%> </p>
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="astro-photo col-12 col-lg-6 me-md-auto">
+          <%= cl_image_tag(@astroflat.photo.key) if @astroflat.photo.attached? %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-6 mt-5">
+          <%= @astroflat.content %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-6 mb-3">
+          $ <%= @astroflat.price_per_night %> per night
+          <%= @astroflat.number_of_guests %>
+          <%= @astroflat.surface_area %>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<% if policy(@astroflat).edit? %>
-  <%= link_to "Edit this astroflat", edit_astroflat_path(@astroflat) %> |
-<% end %>
-<!-- [...] -->
-<%= link_to "Delete",
-astroflat_path(@astroflat),
-data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@astroflat).destroy? %>
-
-<%= cl_image_tag(@astroflat.photo.key) if @astroflat.photo.attached? %>
+  <div class ="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <div class="mt-3 d-flex justify-content-between">
+        <% if policy(@astroflat).edit? %>
+          <div class='btn btn-ghost'>
+            <%= link_to "Edit my astroflat", edit_astroflat_path(@astroflat) %>
+            <% end %>
+          </div>
+          <!-- [...] -->
+          <div class='btn btn-ghost'>
+            <%= link_to "Delete",
+            astroflat_path(@astroflat),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@astroflat).destroy? %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

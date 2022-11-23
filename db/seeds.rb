@@ -15,6 +15,7 @@
 Astroflat.destroy_all
 User.destroy_all
 User.create(email: "blablabla@gmail.com", password: "123456")
+
 Astroflat.create(
     flat_name: "Appartment under the ice",
     content: "Great appatment on Mars under ice, don't be afraid, it isn't cold as you can think !",
