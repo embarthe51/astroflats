@@ -1,9 +1,22 @@
-
-#box-astroflat {
+.box-astroflat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 25px auto 0 auto;
   border-radius: 20px;
   background-color: white;
-
-  .astro-photo {
-border-radius: 10px
+  max-width: 550px;
+  padding: 1rem;
+  img {
+    width: 450px;
+    height: 450px;
+    border-radius: 4px;
+    object-fit: cover;
+    object-position: center;
+  }
+  p {
+    margin-top: 1rem;
+    text-align: center;
   }
 }
