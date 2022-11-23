@@ -1,15 +1,14 @@
 <div class="container">
     <article class="box-astroflat">
-            <h2><%=@astroflat.flat_name %></h2>
-            <p> <strong>Address:</strong> <%= @astroflat.address%> </p>
-            <%= cl_image_tag(@astroflat.photo.key) if @astroflat.photo.attached? %>
-            <p><%= @astroflat.content %></p>
-            <p>$ <%= @astroflat.price_per_night %> per night</p>
-            <div>
-              <p>number of guests: <%= @astroflat.number_of_guests %> |
-              surface area: <%= @astroflat.surface_area %> m²</p>
-            </div>
-
+      <%= cl_image_tag(@astroflat.photo.key) if @astroflat.photo.attached? %>
+      <div class="flat-details">
+        <h2><%=@astroflat.flat_name %></h2>
+        <p> <strong>Address:</strong> <%= @astroflat.address%> </p>
+        <p><%= @astroflat.content %></p>
+        <p>$ <%= @astroflat.price_per_night %> per night</p>
+        <p>number of guests: <%= @astroflat.number_of_guests %> |
+        surface area: <%= @astroflat.surface_area %> m²</p>
+      </div>
     </article>
 
 
@@ -24,8 +23,8 @@
           <!-- [...] -->
           <div class='btn btn-ghost'>
             <%= link_to "Delete",
-            astroflat_path(@astroflat),
-            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@astroflat).destroy? %>
+              astroflat_path(@astroflat),
+              data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if policy(@astroflat).destroy? %>
           </div>
       </div>
     </div>
