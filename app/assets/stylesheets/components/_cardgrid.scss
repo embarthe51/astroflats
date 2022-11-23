@@ -19,6 +19,15 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+a {
+text-decoration: none;
+color: white;
+}
+
+a:hover{
+  color: rgba(255, 255, 255, 0.837);
+}
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
