@@ -1,7 +1,7 @@
     <%= simple_form_for :search, url: astroflats_path, method: :get do |f| %>
       <div class="search-form-control form-group">
         <%= text_field_tag :query,
-          params[:query], class: "form-control string required", placeholder:"Search an astroflat" %>
+          params[:query], class: "form-control string required", placeholder:"Search an astroflat, number of guests, price per night..." %>
           <%= button_tag class: 'btn btn-flat' do %>
           <%= icon 'fas', 'search' %>
         <% end %>
