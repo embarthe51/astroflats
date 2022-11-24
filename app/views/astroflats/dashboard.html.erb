@@ -1,0 +1,11 @@
+<section>
+  <h2>Astro dashboard</h2>
+  <div class="dashboard-flats-container">
+    <% @astroflats.each do |item| %>
+      <article>
+        <p><%= item.flat_name %></p>
+        <%= item.photo.attached? ? cl_image_tag(item.photo.key) : image_tag("planet.jpg") %>
+      </article>
+    <% end %>
+  </div>
+</section>

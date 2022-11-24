@@ -5,6 +5,11 @@ class AstroflatsController < ApplicationController
     @astroflats = policy_scope(Astroflat)
   end
 
+  def dashboard
+    authorize Astroflat
+    @astroflats = Astroflat.where(user: current_user)
+  end
+
   def show
     authorize @astroflat
   end
