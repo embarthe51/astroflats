@@ -1,6 +1,6 @@
 <section>
-  <h2>Astroflats</h2>
   <div class="container">
+    <%= render "shared/searchbar" %>
     <div class="cards">
       <% @astroflats.each do |item| %>
         <%= link_to astroflat_path(item) do %>

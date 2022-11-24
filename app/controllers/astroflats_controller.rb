@@ -3,6 +3,16 @@ class AstroflatsController < ApplicationController
 
   def index
     if params[:query].present?
+      # if params[:query].match(/\d+/)
+      #   params[:query].to_i
+      # else
+      #   sql_query = <<~SQL
+      #     astroflats.flat_name @@ :query
+      #     OR astroflats.address @@ :query
+      #     OR astroflats.content @@ :query
+      #   SQL
+      #   @astroflats = policy_scope(Astroflat.where(sql_query, query: "%#{params[:query]}%"))
+      # end
       sql_query = <<~SQL
         astroflats.flat_name @@ :query
         OR astroflats.address @@ :query
@@ -13,7 +23,6 @@ class AstroflatsController < ApplicationController
       @astroflats = policy_scope(Astroflat)
     end
   end
-
 
   def dashboard
     authorize Astroflat

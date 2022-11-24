@@ -5,23 +5,7 @@
     <h1>Welcome to Astroflat!</h1>
     <h3><%= current_user.first_name if user_signed_in? %></h3>
     <p>Let's book flats on another planet!</p>
-
-       <%= simple_form_for :search, url: astroflats_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-       <%= text_field_tag :query,
-          params[:query], class: "form-control string required", placeholder:"Search a planet" %>
-
-          <%# <%= submit_tag "Search", class: "btn btn-flat" %>
-          <%= button_tag class: 'btn btn-flat' do %>
-          <%= icon 'fas', 'search' %>
-      <% end %>
-      </div>
-        <%# <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search" ></i>
-        </button> %>
-    <% end %>
-
-
+    <%= render "shared/searchbar" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
