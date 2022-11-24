@@ -9,6 +9,9 @@
         <p>$ <%= @astroflat.price_per_night %> per night</p>
         <p>number of guests: <%= @astroflat.number_of_guests %> |
         surface area: <%= @astroflat.surface_area %> m²</p>
+        <div class="btn btn-flat-violet">
+          <%= link_to "Book this astroflat", new_astroflat_booking_path(@astroflat) %>
+        </div>
       </div>
     </article>
 
@@ -21,7 +24,6 @@
             <%= link_to "Edit my astroflat", edit_astroflat_path(@astroflat) %>
             <% end %>
           </div>
-          <!-- [...] -->
           <div class='btn btn-ghost'>
             <%= link_to "Delete",
               astroflat_path(@astroflat),
