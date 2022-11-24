@@ -18,6 +18,8 @@ class AstroflatsController < ApplicationController
       @astroflats = policy_scope(Astroflat)
     end
   end
+  # if params[:price_per_night].present?
+  #   @astroflats = policy_scope(Astroflat.where(price_per_night.value > params[:price_per_night]))
 
   def dashboard
     authorize Astroflat
