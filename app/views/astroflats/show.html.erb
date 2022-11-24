@@ -17,6 +17,16 @@
       </div>
     </article>
 
+  <% if current_user == @astroflat.user %>
+    <% @astroflat.bookings.each do |item| %>
+  <h3>Bookings planned : </h3>
+      <article class="shadowed">
+        <h5><%= "from: #{item.arrival_date.strftime("%m/%d/%Y")} to: #{item.departure_date.strftime("%m/%d/%Y")}" %></h5>
+        <%= item.user.first_name %>
+      </article>
+    <% end %>
+  <% end %>
+  <%# <% end %>
 
   <div class ="row justify-content-center">
     <div class="col-12 col-lg-6">

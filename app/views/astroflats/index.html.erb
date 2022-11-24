@@ -15,8 +15,14 @@
                   <h2><%= item.flat_name %></h2>
                   <p><%= item.content %></p>
                 </div>
-                <h3 class="card-trip-pricing"><%= item.price_per_night %>€</h3>
+                <div>
+                  <h3 class="card-trip-pricing">$<%= item.price_per_night %> per night</h3>
+
+                </div>
                 <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
+              <% if item.user == current_user %>
+                <p>My astroflat</p>
+              <% end %>
               </div>
           </div>
         <% end %>
