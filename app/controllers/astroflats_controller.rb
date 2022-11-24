@@ -3,22 +3,17 @@ class AstroflatsController < ApplicationController
 
   def index
     if params[:query].present?
-      # if params[:query].match(/\d+/)
-      #   params[:query].to_i
-      # else
-      #   sql_query = <<~SQL
-      #     astroflats.flat_name @@ :query
-      #     OR astroflats.address @@ :query
-      #     OR astroflats.content @@ :query
-      #   SQL
-      #   @astroflats = policy_scope(Astroflat.where(sql_query, query: "%#{params[:query]}%"))
-      # end
-      sql_query = <<~SQL
-        astroflats.flat_name @@ :query
-        OR astroflats.address @@ :query
-        OR astroflats.content @@ :query
-      SQL
-      @astroflats = policy_scope(Astroflat.where(sql_query, query: "%#{params[:query]}%"))
+      if params[:query].match?(/\d+/)
+        params[:query] = params[:query].to_i
+        @astroflats = policy_scope(Astroflat.where(price_per_night: params[:query]).or(Astroflat.where(surface_area: params[:query]).or(Astroflat.where(number_of_guests: params[:query]))))
+      else
+        sql_query = <<~SQL
+          astroflats.flat_name @@ :query
+          OR astroflats.address @@ :query
+          OR astroflats.content @@ :query
+        SQL
+        @astroflats = policy_scope(Astroflat.where(sql_query, query: "%#{params[:query]}%"))
+      end
     else
       @astroflats = policy_scope(Astroflat)
     end
