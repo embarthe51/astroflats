@@ -35,9 +35,9 @@
       </div>
     </div>
   </div>
+<% if current_user == @astroflat.user %>
   <div class="mt-5">
-  <div class="booking-container">
-    <% if current_user == @astroflat.user %>
+    <div class="booking-container">
     <h4 class="mb-3">Bookings planned : </h4>
       <% @astroflat.bookings.each do |item| %>
         <article class="shadowed mb-2 pt-2 pb-2">
@@ -45,8 +45,8 @@
           <h5><%= "from: #{item.arrival_date.strftime("%m/%d/%Y")} to: #{item.departure_date.strftime("%m/%d/%Y")}" %></h5>
         </article>
       <% end %>
-    <% end %>
     </div>
   </div>
+<% end %>
 
 </div>
