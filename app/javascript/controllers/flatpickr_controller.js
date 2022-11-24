@@ -11,6 +11,7 @@ static targets = [ 'startDateInput', 'endDateInput' ]
 connect() {
 flatpickr(this.startDateInputTarget, {
 mode: 'range',
+inline: 'true',
 "plugins": [new rangePlugin({ input: this.endDateInputTarget})]
 })
 }

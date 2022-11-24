@@ -32,22 +32,29 @@
 // }
 
 .btn-ghost {
-  color: #B01E68;
-  border: 1px solid #B01E68;
+  color: #f59972;
+  border: 1px solid #f59972;
   padding: 8px 10px;
   border-radius: 4px;
   font-weight: lighter;
-  opacity: 0.6;
+  // opacity: 0.6;
   background: white;
   transition: opacity 0.3s ease;
   a{
     text-decoration: none;
-    color: #B01E68;
+    color: #f59972;
+  }
+  &:hover {
+    background:#f59972;
+    a {
+      color:black
+    }
   }
 }
 
-.btn-ghost:hover {
-  opacity: 1;
-}
+// .btn-ghost:hover {
+//   opacity: 1;
+//   color: black;
+// }
 
 // comment
