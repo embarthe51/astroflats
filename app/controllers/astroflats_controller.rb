@@ -2,8 +2,18 @@ class AstroflatsController < ApplicationController
   before_action :set_astroflat, only: [:show, :edit, :update, :destroy]
 
   def index
-    @astroflats = policy_scope(Astroflat)
+    if params[:query].present?
+      sql_query = <<~SQL
+        astroflats.flat_name @@ :query
+        OR astroflats.address @@ :query
+        OR astroflats.content @@ :query
+      SQL
+      @astroflats = policy_scope(Astroflat.where(sql_query, query: "%#{params[:query]}%"))
+    else
+      @astroflats = policy_scope(Astroflat)
+    end
   end
+
 
   def dashboard
     authorize Astroflat
