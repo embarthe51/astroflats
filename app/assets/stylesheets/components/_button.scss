@@ -3,7 +3,7 @@
   padding: 8px 24px;
   border-radius: 4px;
   background: #f59972;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn-flat-violet {
@@ -11,7 +11,14 @@
   padding: 8px 24px;
   border-radius: 4px;
   background: #B01E68;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  margin: 0 auto;
+  &:hover {
+    background: rgb(234, 234, 234);
+    a {
+      color: black;
+    }
+  }
 }
 
 // .btn-small {
