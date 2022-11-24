@@ -1,0 +1,20 @@
+<div class="container">
+<h2>My bookings </h2>
+  <% current_user.bookings.each do |booking| %>
+    <div class="card-trip ">
+      <%= booking.astroflat.flat_name %>
+      <%= booking.astroflat.address %>
+      <%= booking.arrival_date %>
+      <%= booking.departure_date %>
+    </div>
+  <% end %>
+</div>
+
+
+
+<%# <% current_user.astroflats.each do |astroflat| %>
+<%# <div>
+<%= astroflat.booking.arrival_date %>
+<%# <%= astroflat.booking.departure_date %>
+<%# </div> %>
+<%# <% end %>

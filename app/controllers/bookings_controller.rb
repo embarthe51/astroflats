@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :set_astroflat, only: [:new, :create]
 
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
   end
 
   def new
@@ -15,8 +15,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.astroflat = @astroflat
     @booking.user = current_user
+    authorize @booking
     if @booking.save
-      redirect_to astroflat_path(@astroflat)
+      redirect_to bookings_path
     else
       @booking = Booking.new
       render :new, status: :unprocessable_entity
