@@ -11,7 +11,7 @@
        <%= text_field_tag :query,
           params[:query], class: "form-control string required", placeholder:"Search a planet" %>
 
-          <%# <%= submit_tag "Search", class: "btn btn-flat" %> 
+          <%# <%= submit_tag "Search", class: "btn btn-flat" %>
           <%= button_tag class: 'btn btn-flat' do %>
           <%= icon 'fas', 'search' %>
       <% end %>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="card-category text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2012/11/28/10/34/rocket-launch-67643__340.jpg)">
-          <h3>My bookings</h3>
+          <h3><%= link_to "My bookings", bookings_path %></h3>
         </div>
       </div>
     </div>
