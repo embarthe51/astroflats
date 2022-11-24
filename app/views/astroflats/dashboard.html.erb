@@ -1,11 +1,45 @@
 <section>
   <h2>Astro dashboard</h2>
-  <div class="dashboard-flats-container">
-    <% @astroflats.each do |item| %>
-      <article>
-        <p><%= item.flat_name %></p>
-        <%= item.photo.attached? ? cl_image_tag(item.photo.key) : image_tag("planet.jpg") %>
-      </article>
-    <% end %>
+  <div class="dashboard-container">
+    <%# flats container below %>
+    <div class="dashboard-flats-container">
+      <%= link_to new_astroflat_path do %>
+        <article class="shadowed dash-info-card">
+          <h4>Your astroproperties</h4>
+          <p>Don't have any astroflats ?</p>
+          <p><strong>click here and make some astrodollars!</strong> </p>
+          <p><%= "\u{1f47d}" %></p>
+        </article>
+      <% end %>
+      <% @astroflats.each do |item| %>
+        <%= link_to astroflat_path(item) do %>
+          <article class="shadowed">
+            <h5><%= item.flat_name %></h5>
+            <%= item.photo.attached? ? cl_image_tag(item.photo.key) : image_tag("planet.jpg") %>
+            <p><%= "address: #{item.address.first(30)} #{item.address.length > 30 ? "..." : ""}" %></p>
+          </article>
+        <% end %>
+      <% end %>
+    </div>
+    <%# bookings container below %>
+    <div class="dashboard-flats-container">
+      <%= link_to astroflats_path do %>
+        <article class="shadowed dash-info-card">
+          <h4>Your bookings</h4>
+          <p>Don't have any bookings ?</p>
+          <p><strong>click here and find a nice holiday astroflat!</strong> </p>
+          <p><%= "\u{1F680}" %></p>
+        </article>
+      <% end %>
+      <% @bookings.each do |item| %>
+        <%= link_to booking_path(item) do %>
+          <article class="shadowed">
+            <h5><%= "from: #{item.arrival_date.strftime("%m/%d/%Y")} to: #{item.departure_date.strftime("%m/%d/%Y")}" %></h5>
+            <p><strong>Astroflat name:</strong> <%= item.astroflat.flat_name %></p>
+            <p><strong> Address:</strong> <%= item.astroflat.address %></p>
+          </article>
+        <% end %>
+      <% end %>
+    </div>
   </div>
 </section>

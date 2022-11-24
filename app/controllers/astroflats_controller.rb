@@ -8,6 +8,7 @@ class AstroflatsController < ApplicationController
   def dashboard
     authorize Astroflat
     @astroflats = Astroflat.where(user: current_user)
+    @bookings = Booking.where(user: current_user)
   end
 
   def show

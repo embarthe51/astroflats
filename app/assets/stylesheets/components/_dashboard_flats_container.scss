@@ -1,18 +1,38 @@
 .dashboard-flats-container {
   max-width: 540px;
+  height: fit-content;
   background-color: white;
   padding: 32px;
   margin: 32px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   border-radius: 4px;
-
-  article {
-    margin: 16px;
+  .dash-info-card {
+    background-color: rgba(255, 225, 93, 0.5);
+    h4 {
+      font-weight: bolder;
+    }
   }
-
-  img {
-    width: 200px;
+  a {
+    color: black;
+    article {
+      margin: 16px;
+      width: 200px;
+      height: 270px;
+      text-align: center;
+      padding: 1rem;
+      h5 {
+        color: black;
+      }
+      img {
+        width: 150px;
+        border-radius: 4px;
+      }
+      p {
+        margin-top: 0.3rem;
+      }
+    }
   }
 }
