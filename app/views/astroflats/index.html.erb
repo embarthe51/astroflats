@@ -3,27 +3,26 @@
     <%= render "shared/searchbar" %>
     <div class="cards">
       <% @astroflats.each do |item| %>
-        <%= link_to astroflat_path(item) do %>
-          <div class="card-trip">
-            <% if item.photo.attached? %>
-              <%= cl_image_tag(item.photo.key) %>
-            <% else %>
-              <%= image_tag "planet.jpg" %>
-            <% end %>
-              <div class="card-trip-infos">
-                <div>
-                  <h2><%= item.flat_name %></h2>
-                  <p><%= item.content %></p>
+        <% if item.user != current_user %>
+          <%= link_to astroflat_path(item) do %>
+            <div class="card-trip">
+              <% if item.photo.attached? %>
+                <%= cl_image_tag(item.photo.key) %>
+              <% else %>
+                <%= image_tag "planet.jpg" %>
+              <% end %>
+                <div class="card-trip-infos">
+                  <div class="infos">
+                    <h2><%= item.flat_name %></h2>
+                    <p><%= item.content %></p>
+                  </div>
+                  <div>
+                    <h3 class="card-trip-pricing">$<%= item.price_per_night %> / night</h3>
+                  </div>
+                  <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
                 </div>
-                <div>
-                  <h3 class="card-trip-pricing">$<%= item.price_per_night %> per night</h3>
-                </div>
-                <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
-                <% if item.user == current_user %>
-                  <p class="title">My astroflat</p>
-                <% end %>
-              </div>
-          </div>
+            </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>

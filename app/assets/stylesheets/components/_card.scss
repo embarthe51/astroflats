@@ -38,7 +38,7 @@ h2{
 }
 
 .card-trip h2 {
-  font-size: 16px;
+  font-size: 19px;
   font-weight: bold;
   margin-top: 3px;
 }
@@ -50,11 +50,11 @@ h2{
   position: absolute;
   right: 8px;
   bottom: 0;
-  color: black
+  color: #f59972;
 }
 
 .card-trip p {
-  font-size: 12px;
+  font-size: 14px;
   opacity: 0.7;
   margin: 0;
 }
@@ -62,9 +62,9 @@ h2{
 
 .card-trip .card-trip-infos {
   padding: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: flex-end;
   position: relative;
 }
 
@@ -77,4 +77,8 @@ h2{
 
 .card-trip-infos {
   color: black;
+}
+
+.card-trip .card-trip-infos .infos {
+  height: 100px;
 }
