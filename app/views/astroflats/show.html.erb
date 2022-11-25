@@ -37,26 +37,30 @@
   </div>
 <% if current_user == @astroflat.user && @astroflat.bookings.any? %>
   <div class="mt-5">
-    <div class="booking-container">
-      <h4 class="mb-3">Bookings planned : </h4>
+    <div class="booking-container-two">
+      <h4 class="mb-4"> <strong>Bookings planned:</strong></h4>
       <% @astroflat.bookings.each do |item| %>
-        <article class="shadowed mb-2 pt-2 pb-2">
+        <article class="shadowed mb-3 pt-2 pb-2" style="background-color: white; padding-left: 1rem; border-radius: 10px">
           <h5><strong><%= item.user.first_name %></strong></h5>
           <h5><%= "from: #{item.arrival_date.strftime("%d/%m/%Y")} to: #{item.departure_date.strftime("%d/%m/%Y")}" %></h5>
         </article>
       <% end %>
     </div>
   </div>
-  <% else%>
+  <% elsif current_user != @astroflat.user && @astroflat.bookings.any? %>
   <div class="mt-5">
-    <div class="booking-container">
-    <h4 class="mb-3">My bookings : </h4>
-      <% @astroflat.bookings.each do |item| %>
-        <article class="shadowed mb-2 pt-2 pb-2">
-          <h5><%= "from: #{item.arrival_date.strftime("%m/%d/%Y")} to: #{item.departure_date.strftime("%m/%d/%Y")}" %></h5>
-          <h5 class="btn btn-flat"> <%= link_to "Edit my booking", edit_booking_path(item) %></h5>
-        </article>
-      <% end %>
+    <div class="booking-container-two">
+      <div>
+        <h4 class="mb-4"><strong>My bookings: </strong> </h4>
+      </div>
+      <div>
+        <% @astroflat.bookings.each do |item| %>
+          <article class="shadowed mb-2 pt-2 pb-2" style="background-color: white; padding-left: 1rem; border-radius: 10px">
+            <h5><%= "from: #{item.arrival_date.strftime("%d/%m/%Y")} to: #{item.departure_date.strftime("%d/%m/%Y")}" %></h5>
+            <h5 class="btn btn-flat"> <%= link_to "Edit my booking", edit_booking_path(item) %></h5>
+          </article>
+        <% end %>
+      </div>
     </div>
   </div>
 <% end %>

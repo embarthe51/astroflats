@@ -38,3 +38,35 @@
   }
 
 }
+
+
+
+.booking-container-2 {
+  max-width: 540px;
+  height: fit-content;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8));
+  padding: 32px;
+  margin: 32px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+
+    article {
+      border-radius: 20px;
+      background-color: white;
+      margin: 16px;
+      width: 200px;
+      height: 270px;
+      text-align: center;
+      padding: 1rem;
+      h5 {
+        color: black;
+      }
+
+      p {
+        margin-top: 0.3rem;
+      }
+    }
+
+}
