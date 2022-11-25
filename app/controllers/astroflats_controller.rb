@@ -43,7 +43,7 @@ class AstroflatsController < ApplicationController
     @astroflat.user = current_user
     authorize @astroflat
     if @astroflat.save
-      redirect_to astroflats_path
+      redirect_to dashboard_path
     else
       render :new, status: :unprocessable_entity
     end
