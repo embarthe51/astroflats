@@ -4,19 +4,20 @@
     <%# flats container below %>
     <div class="dashboard-flats-container">
       <%= link_to new_astroflat_path do %>
-        <article class="shadowed dash-info-card">
+        <article class="very-shadowed dash-info-card">
           <h4>Your astroproperties</h4>
           <p>Don't have any astroflats ?</p>
           <p><strong>click here and make some astrodollars!</strong> </p>
-          <p><%= "\u{1f47d}" %></p>
+          <p><%= "\u{1F4B8} \u{1f47d} \u{1F4B8}" %></p>
         </article>
       <% end %>
       <% @astroflats.each do |item| %>
         <%= link_to astroflat_path(item) do %>
-          <article class="shadowed">
-            <h5><%= item.flat_name %></h5>
+          <article class="very-shadowed">
             <%= item.photo.attached? ? cl_image_tag(item.photo.key) : image_tag("planet.jpg") %>
-            <p><%= "address: #{item.address.first(30)} #{item.address.length > 30 ? "..." : ""}" %></p>
+            <h5><%= item.flat_name %></h5>
+            <p><%= "address: #{item.address.first(20)} #{item.address.length > 20 ? "..." : ""}" %></p>
+            <p><strong><%= item.future_bookings_string %></strong></p>
           </article>
         <% end %>
       <% end %>
@@ -24,19 +25,22 @@
     <%# bookings container below %>
     <div class="dashboard-flats-container">
       <%= link_to astroflats_path do %>
-        <article class="shadowed dash-info-card">
+        <article class="very-shadowed dash-info-card">
           <h4>Your bookings</h4>
           <p>Don't have any bookings ?</p>
           <p><strong>click here and find a nice holiday astroflat!</strong> </p>
-          <p><%= "\u{1F680}" %></p>
+          <p><%= "\u{1F680} \u{1F680}" %></p>
         </article>
       <% end %>
       <% @bookings.each do |item| %>
         <%= link_to astroflat_path(item.astroflat) do %>
-          <article class="shadowed">
-            <h5><%= "from: #{item.arrival_date.strftime("%m/%d/%Y")} to: #{item.departure_date.strftime("%m/%d/%Y")}" %></h5>
-            <p><strong>Astroflat name:</strong> <%= item.astroflat.flat_name %></p>
-            <p><strong> Address:</strong> <%= item.astroflat.address %></p>
+          <article class="very-shadowed">
+            <h5><%= "From: #{item.arrival_date.strftime("%d/%m/%Y")}" %></h5>
+            <h5><%= " To: #{item.departure_date.strftime("%d/%m/%Y")}" %></h5>
+            <p><strong>Contact:</strong> <%= item.astroflat.user.email %></p>
+            <p><strong>Address:</strong> <%= item.astroflat.address %></p>
+            <p>Booked for <strong><%= item.total_days_booked %></strong> days</p>
+            <p><strong>Total:</strong> <%= item.total_price_formated_string %></p>
           </article>
         <% end %>
       <% end %>

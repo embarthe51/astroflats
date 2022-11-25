@@ -1,18 +1,20 @@
 .dashboard-flats-container {
   max-width: 540px;
   height: fit-content;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
-                    url('https://cdn.pixabay.com/photo/2017/12/28/12/31/sketch-3045125_1280.jpg');
-  padding: 32px;
+  background-image: linear-gradient(25deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+                    url('https://cdn.pixabay.com/photo/2018/09/22/12/31/cat-3695213_1280.jpg');
+  padding: 16px;
   margin: 32px;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  border-radius: 4px;
+  border-radius: 46px;
   .dash-info-card {
     background-color: rgb(255, 237, 155);
     h4 {
+      margin-top: 1rem;
       font-weight: bolder;
     }
   }
@@ -21,19 +23,35 @@
     article {
       background-color: white;
       margin: 16px;
-      width: 200px;
-      height: 270px;
+      width: 222px;
+      min-height: 170px;
+      padding-bottom: 16px;
       text-align: center;
-      padding: 1rem;
+      border-radius: 24px;
+      transition: all ease-in-out 0.3s;
+      overflow: hidden;
       h5 {
+        margin-top: 1rem;
         color: black;
       }
       img {
-        width: 150px;
-        border-radius: 4px;
+        width: 101%;
+        height: 50%;
+        object-fit: cover;
+        object-position: 0%;
+        border-radius: 24px 24px 0px 0px;
+        transition: all ease-in-out 0.3s;
       }
       p {
         margin-top: 0.3rem;
+        margin: 0 1rem;
+      }
+      &:hover {
+        border-radius: 5px;
+        img {
+          border-radius: 5px 5px 0px 0px;
+          object-position: 5% 5%;
+        }
       }
     }
   }
