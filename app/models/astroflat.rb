@@ -1,6 +1,6 @@
 class Astroflat < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependant: :destroy
 
   has_one_attached :photo
 
