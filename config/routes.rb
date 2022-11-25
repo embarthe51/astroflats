@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   # dashboard route
   get 'dashboard', to: 'astroflats#dashboard'
 
-  resources :bookings, only: [:index, :show, :destroy]
+  resources :bookings, only: [:index, :show, :destroy, :edit, :update]
 end

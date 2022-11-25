@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  # before_action :set_bookmark, only: :destroy
+  before_action :set_booking, only: [:edit, :update]
   before_action :set_astroflat, only: [:new, :create]
 
   def index
@@ -24,6 +24,16 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    authorize @booking
+  end
+
+  def update
+    authorize @booking
+    @booking.update(booking_params)
+    redirect_to dashboard_path
+  end
+
   # def destroy
   #   @booking.destroy
   #   redirect_to list_path(@booking.list), status: :see_other
@@ -35,9 +45,9 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:arrival_date, :departure_date)
   end
 
-  # def set_booking
-  #   @booking = Booking.find(params[:id])
-  # end
+  def set_booking
+    @booking = Booking.find(params[:id])
+  end
 
   def set_astroflat
     @astroflat = Astroflat.find(params[:astroflat_id])
