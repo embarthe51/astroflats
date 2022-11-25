@@ -23,7 +23,7 @@ class Astroflat < ApplicationRecord
     boolean_response = false
     if bookings.any?
       bookings.each do |item|
-        item.arrival_date > today ? boolean_response = false : boolean_response = true
+        item.arrival_date <= today ? boolean_response = false : boolean_response = true
       end
     end
     boolean_response
