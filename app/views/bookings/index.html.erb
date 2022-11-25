@@ -1,4 +1,4 @@
-<section>
+<section class="astro-section">
   <div class="container">
   <h2>My bookings </h2>
     <% current_user.bookings.each do |booking| %>
@@ -11,14 +11,5 @@
       </div>
     <% end %>
   </div>
-
 </section>
 
-
-
-<%# <% current_user.astroflats.each do |astroflat| %>
-<%# <div>
-<%= astroflat.booking.arrival_date %>
-<%# <%= astroflat.booking.departure_date %>
-<%# </div> %>
-<%# <% end %>
