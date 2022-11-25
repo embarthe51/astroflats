@@ -1,15 +1,18 @@
-<div class="container">
-<h2>My bookings </h2>
-  <% current_user.bookings.each do |booking| %>
-    <div class="card-trip ">
-      <%= booking.astroflat.flat_name %>
-      <%= booking.astroflat.address %>
-      <%= booking.arrival_date %>
-      <%= booking.departure_date %>
-      <div class="btn btn-flat"><%= link_to "View this astroflat", astroflat_path(booking.astroflat) %></div>
-    </div>
-  <% end %>
-</div>
+<section>
+  <div class="container">
+  <h2>My bookings </h2>
+    <% current_user.bookings.each do |booking| %>
+      <div class="card-trip ">
+        <%= booking.astroflat.flat_name %>
+        <%= booking.astroflat.address %>
+        <%= booking.arrival_date %>
+        <%= booking.departure_date %>
+        <div class="btn btn-flat"><%= link_to "View this astroflat", astroflat_path(booking.astroflat) %></div>
+      </div>
+    <% end %>
+  </div>
+
+</section>
 
 
 
